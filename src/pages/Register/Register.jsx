@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import register from "../../assets/register.json";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
+import SocialLogin from "../shared/SocialLogin";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -12,12 +13,12 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     createUser(email, password)
-    .then(result => {
-      console.log(result.user)
-    })
-    .catch(error => {
-      console.log(error.message);
-    })
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
   return (
     <div className="hero min-h-screen">
@@ -59,6 +60,8 @@ const Register = () => {
               value={"Register"}
             />
           </form>
+          
+          <SocialLogin></SocialLogin>
         </div>
         <div>
           <Lottie animationData={register} loop={true}></Lottie>
