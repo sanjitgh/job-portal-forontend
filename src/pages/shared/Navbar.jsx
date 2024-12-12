@@ -8,11 +8,9 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink>Home</NavLink>
-      <NavLink>Home</NavLink>
-      <NavLink>Home</NavLink>
-      <NavLink>Home</NavLink>
-      <NavLink>Home</NavLink>
+      <NavLink to={"/"}>Home</NavLink>
+      <NavLink to={"/myApplication"}>My Application</NavLink>
+      
     </>
   );
   return (
@@ -52,7 +50,7 @@ const Navbar = () => {
       <div className="navbar-end gap-3">
         {user ? (
           <>
-            <button onClick={signOutUser} className="btn">
+            <button onClick={signOutUser} className="btn bg-cyan-400">
               Logout
             </button>
           </>
