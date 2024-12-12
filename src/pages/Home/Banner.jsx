@@ -12,7 +12,6 @@ const Banner = () => {
             <motion.img
               animate={{ y: [50, 100, 50] }}
               transition={{ duration: 10, repeat: Infinity }}
-              tra
               className="w-9/12 rounded-t-[40px] rounded-br-[40px] border-l-4 border-b-4 border-blue-500"
               src={team1}
             />
@@ -24,15 +23,14 @@ const Banner = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              tra
               className="w-9/12 rounded-bl-[40px] rounded-t-[40px] border-r-4 border-b-4 border-blue-500"
               src={team2}
             />
           </div>
           <div className="flex-1">
             <motion.h1
-              animate={{ x: 20 }}
-              transition={{ duration: 0.3, delay: 1, ease: "linear" }}
+              animate={{ y: -20 }}
+              transition={{ duration: 1, ease: "linear" }}
               className="text-5xl font-bold"
             >
               Latest job for you.
