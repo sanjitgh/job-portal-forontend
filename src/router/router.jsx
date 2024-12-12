@@ -28,8 +28,12 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/jobs/${params.id}`),
       },
       {
-        path: "jobApply",
-        element: <JobApply></JobApply>
+        path: "jobApply/:id",
+        element: (
+          <PrivetRoute>
+            <JobApply></JobApply>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/register",
