@@ -39,13 +39,13 @@ const HotJobsCard = ({ job }) => {
         <p>Category: {category}</p>
         <p>{description}</p>
         <div>
-          {requirements.map((skill) => (
-            <p className="rounded bg-slate-200 mr-2 mb-2 btn-sm btn">{skill}</p>
+          {requirements.map((skill, idx) => (
+            <p className="rounded bg-slate-200 mr-2 mb-2 btn-sm btn" key={idx}>{skill}</p>
           ))}
         </div>
         <div>
-          {responsibilities.map((res) => (
-            <p className="rounded bg-green-200 mr-2 mb-2 btn-sm btn">{res}</p>
+          {responsibilities.map((res, idx) => (
+            <p className="rounded bg-green-200 mr-2 mb-2 btn-sm btn" key={idx}>{res}</p>
           ))}
         </div>
         <p>Salary: {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
