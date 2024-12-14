@@ -5,7 +5,6 @@ import MyApplicationCard from "./MyApplicationCard";
 const MyApplication = () => {
   const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
-  console.log(jobs);
   useEffect(() => {
     fetch(`http://localhost:5000/job-applications?email=${user.email}`)
       .then((res) => res.json())
