@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hook/useAuth";
 import MyApplicationCard from "./MyApplicationCard";
+import axios from "axios";
 
 const MyApplication = () => {
   const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/job-applications?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setJobs(data);
-      });
+    // fetch(`http://localhost:5000/job-applications?email=${user.email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setJobs(data);
+    //   });
+
+    axios
+      .get(`http://localhost:5000/job-applications?email=${user.email}`, {withCredentials: true})
+      .then((res) => setJobs(res.data));
   }, [user.email]);
 
   return (
@@ -20,9 +25,9 @@ const MyApplication = () => {
           My Applications: {jobs.length}
         </h1>
         <div>
-          {
-            jobs.map(job => <MyApplicationCard key={job._id} job={job}></MyApplicationCard>)
-          }
+          {jobs.map((job) => (
+            <MyApplicationCard key={job._id} job={job}></MyApplicationCard>
+          ))}
         </div>
       </div>
     </div>
