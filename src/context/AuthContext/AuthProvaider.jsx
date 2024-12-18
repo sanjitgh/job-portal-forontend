@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
+import axios from "axios";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -39,7 +40,29 @@ const AuthProvaider = ({ children }) => {
   useEffect(() => {
     const unsubscrbe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+
+        axios
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log("login token", res.data);
+            setLoading(false);
+          });
+      } else {
+        axios
+          .post(
+            "http://localhost:5000/logout",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log("logout token", res.data);
+            setLoading(false);
+          });
+      }
     });
     return () => {
       unsubscrbe();

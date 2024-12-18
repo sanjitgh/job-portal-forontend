@@ -42,8 +42,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"}>
+        <Link to={"/"} className="flex gap-3 items-center text-3xl font-medium">
         <img className="w-14" src={logo} alt="" />
+        Job Portal
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
