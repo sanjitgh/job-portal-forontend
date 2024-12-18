@@ -1,6 +1,5 @@
 import React from "react";
 import Swal from "sweetalert2";
-import useAuth from "../../hook/useAuth";
 
 const MyApplicationCard = ({ job }) => {
   const {
@@ -14,8 +13,6 @@ const MyApplicationCard = ({ job }) => {
     company,
   } = job;
 
-  const {user} = useAuth();
-  console.log(user);
   
   const handelDelete = (id) => {
     Swal.fire({
