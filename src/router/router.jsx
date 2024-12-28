@@ -9,6 +9,8 @@ import JobApply from "../pages/JobApply/JobApply";
 import MyApplication from "../pages/MyApplication/MyApplication";
 import AddJob from "../pages/AddJob/AddJob";
 import MyPostedJobs from "../pages/MyPostedJobs/MyPostedJobs";
+import AllJobs from "../pages/AllJobs/AllJobs";
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/all-jobs",
+        element: <AllJobs></AllJobs>
+      },
+      {
         path: "/jobs/:id",
         element: (
           <PrivetRoute>
@@ -28,7 +34,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://job-portal-server-theta-three.vercel.app/jobs/${params.id}`),
+          fetch(`http://localhost:5000/jobs/${params.id}`),
       },
       {
         path: "jobApply/:id",

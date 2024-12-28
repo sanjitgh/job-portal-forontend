@@ -44,7 +44,7 @@ const AuthProvaider = ({ children }) => {
         const user = { email: currentUser.email };
 
         axios
-          .post("https://job-portal-server-theta-three.vercel.app/jwt", user, { withCredentials: true })
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
           .then((res) => {
             console.log("login token", res.data);
             setLoading(false);
@@ -52,7 +52,7 @@ const AuthProvaider = ({ children }) => {
       } else {
         axios
           .post(
-            "https://job-portal-server-theta-three.vercel.app/logout",
+            "http://localhost:5000/logout",
             {},
             {
               withCredentials: true,

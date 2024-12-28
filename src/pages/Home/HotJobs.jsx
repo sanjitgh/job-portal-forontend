@@ -5,7 +5,7 @@ const HotJobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch(`https://job-portal-server-theta-three.vercel.app/jobs`)
+    fetch(`http://localhost:5000/hot-jobs`)
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);

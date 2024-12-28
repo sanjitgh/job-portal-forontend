@@ -5,7 +5,7 @@ const MyPostedJobs = () => {
   const [jobs, setJobs] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`https://job-portal-server-theta-three.vercel.app/jobs?email=${user.email}`)
+    fetch(`http://localhost:5000/jobs?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

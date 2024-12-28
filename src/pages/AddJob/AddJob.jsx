@@ -22,7 +22,7 @@ const AddJob = () => {
     newData.responsibilities = newData.responsibilities.split("\n");
     console.log(newData);
 
-    fetch("https://job-portal-server-theta-three.vercel.app/jobs", {
+    fetch("http://localhost:5000/jobs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
