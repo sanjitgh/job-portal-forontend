@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import useAuth from "./useAuth";
 import { useNavigate } from "react-router";
 const axiousInstant = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://job-portal-server-theta-three.vercel.app",
   withCredentials: true,
 });
 const useAxiousSecure = () => {

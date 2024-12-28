@@ -28,7 +28,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/jobs/${params.id}`),
+          fetch(`https://job-portal-server-theta-three.vercel.app/jobs/${params.id}`),
       },
       {
         path: "jobApply/:id",

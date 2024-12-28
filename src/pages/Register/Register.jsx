@@ -55,7 +55,7 @@ const Register = () => {
             </div>
             <input
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-primary bg-green-500 hover:bg-green-600"
               value={"Register"}
             />
           </form>
